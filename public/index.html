@@ -13,31 +13,35 @@
         }
     </style>
     <script>
+        function fillTable(data) {
+            var t = '<table border>';
+                    
+            t += '<tr>';
+            t += '<td>Name</td>';
+            t += '<td>Description</td>';
+            t += '<td>Type</td>';
+            t += '</tr>';
+
+            for (var r = 0; r < data.rows.length; r++) {
+                t += '<tr>';
+                t += '<td>' + data.rows[r][0] + '</td>';
+                t += '<td>' + data.rows[r][1] + '</td>';
+                t += '<td>' + data.rows[r][2] + '</td>';
+                t += '</tr>';
+            }
+
+            t += '</table>";
+
+            return t;
+        }
+        
         $(function() {
             $.ajax({
                 url: '/list',
                 method: 'get',
                 dataType: "json",
                 success: function(data) {
-                    var t = '<table border>";
-                    
-                    t += '<tr>';
-                    t += '<td>Name</td>';
-                    t += '<td>Description</td>';
-                    t += '<td>Type</td>';
-                    t += '</tr>';
-                    
-                    for (var r = 0; r < data.rows.length; r++) {
-                        t += '<tr>';
-                        t += '<td>' + data.rows[r][0] + '</td>';
-                        t += '<td>' + data.rows[r][1] + '</td>';
-                        t += '<td>' + data.rows[r][2] + '</td>';
-                        t += '</tr>';
-                    }
-                    
-                    t += '</table>";
-                    
-                    $("#accounts").html(t);
+                    $("#accounts").html(fillTable(data));
                 },
                 error: function(err) {
                     console.log(err);
