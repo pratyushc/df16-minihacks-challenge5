@@ -19,6 +19,7 @@
                 method: 'get',
                 dataType: "json",
                 success: function(data) {
+                    console.log('Got: ' + data);
                     $("#accounts").html(data);
                 },
                 error: function(err) {
