@@ -14,7 +14,7 @@ app.get('/list', function(req, res) {
         // watch for any connect issues
         if (err) console.log(err);
         conn.query(
-            'SELECT Name, Description, Type FROM Salesforce.Account LIMIT 10',
+            'SELECT Name, Description, Type FROM Salesforce.Account ORDER BY CreatedDate DESC LIMIT 10',
             function(err, result) {
                 if (err) {
                     res.status(400).json({error: err.message});
