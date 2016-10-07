@@ -1,7 +1,7 @@
 {
-  "name": "phone-change",
-  "version": "0.0.0",
-  "description": "Heroku Connect Sample App - Phone Change",
+  "name": "df16-minihacks-challenge5",
+  "version": "0.0.1",
+  "description": "DF16 Mini Hacks - CHALLENGE 5: Heroku App in Action",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
