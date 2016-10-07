@@ -24,9 +24,9 @@
 
             for (var r = 0; r < data.rows.length; r++) {
                 t += '<tr>';
-                t += '<td>' + data.rows[r][0] + '</td>';
-                t += '<td>' + data.rows[r][1] + '</td>';
-                t += '<td>' + data.rows[r][2] + '</td>';
+                t += '<td>' + data.rows[r].name + '</td>';
+                t += '<td>' + data.rows[r].description + '</td>';
+                t += '<td>' + data.rows[r].type + '</td>';
                 t += '</tr>';
             }
 
