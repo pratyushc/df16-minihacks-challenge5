@@ -19,8 +19,25 @@
                 method: 'get',
                 dataType: "json",
                 success: function(data) {
-                    console.log('Got: ' + data);
-                    $("#accounts").html(data);
+                    var t = '<table border>";
+                    
+                    t += '<tr>';
+                    t += '<td>Name</td>';
+                    t += '<td>Description</td>';
+                    t += '<td>Type</td>';
+                    t += '</tr>';
+                    
+                    for (var r = 0; r < data.rows.length; r++) {
+                        t += '<tr>';
+                        t += '<td>' + data.rows[r][0] + '</td>';
+                        t += '<td>' + data.rows[r][1] + '</td>';
+                        t += '<td>' + data.rows[r][2] + '</td>';
+                        t += '</tr>';
+                    }
+                    
+                    t += '</table>";
+                    
+                    $("#accounts").html(t);
                 },
                 error: function(err) {
                     console.log(err);
@@ -30,7 +47,8 @@
     </script>
 </head>
 <body>
-    <h3>Salesforce Accounts</h3>
+    <b>Salesforce Accounts</b>
+    <br/><br/>
     <div id = "accounts"/>
 </body>
 </html>
