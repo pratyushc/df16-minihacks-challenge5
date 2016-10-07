@@ -1,7 +1,7 @@
 {
   "name": "List Accounts",
   "description": "DF16 Mini Hacks - CHALLENGE 5: Heroku App in Action",
-  "repository": "https://github.com/pratyushc/heroku-connect-phone-change",
+  "repository": "https://github.com/pratyushc/df16-minihacks-challenge5",
   "success_url": "/setup.html",
   "env": {
     "PGSSLMODE": {
